@@ -16,7 +16,6 @@ const routes: Routes = [
       import('./home/home.module').then(
         (m) => m.HomeModule
       )
-
   }
 
 
