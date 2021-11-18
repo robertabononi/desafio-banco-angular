@@ -53,8 +53,8 @@ module.exports = {
           "@angular/common": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
           "@angular/common/http": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
           "@angular/router": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
-          "@angular/material/toolbar": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
-          // "@angular/material": { singleton: true, strictVersion: true, requiredVersion: '12.2.12' },
+          //"@angular/material/toolbar": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
+          "@angular/material": { singleton: true, strictVersion: true, requiredVersion: '12.2.12' },
           ...sharedMappings.getDescriptors()
         })
 

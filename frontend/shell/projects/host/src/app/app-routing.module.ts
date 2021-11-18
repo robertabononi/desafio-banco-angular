@@ -3,8 +3,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { MainComponent } from './components/main/main.component';
-
-
 const routes: Routes = [
 
   {
@@ -24,6 +22,16 @@ const routes: Routes = [
             remoteName: 'mfeHome',
             exposedModule: './HomeModule'
           }).then((m) => m.HomeModule)
+
+      },
+      {
+        path: 'dados-cadastro',
+        loadChildren: () =>
+          loadRemoteModule({
+            remoteEntry: 'http://localhost:4200/remoteEntry.js',
+            remoteName: 'mfeHome',
+            exposedModule: './DadosCadastroModule'
+          }).then((m) => m.DadosCadastroModule)
 
       },
       {

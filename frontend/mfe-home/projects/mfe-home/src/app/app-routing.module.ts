@@ -16,8 +16,15 @@ const routes: Routes = [
       import('./home/home.module').then(
         (m) => m.HomeModule
       )
-  }
+  },
 
+  {
+    path: 'dados-cadastro',
+    loadChildren: () =>
+      import('./dados-cadastro/dados-cadastro.module').then(
+        (m) => m.DadosCadastroModule
+      )
+  }
 
 ];
 
