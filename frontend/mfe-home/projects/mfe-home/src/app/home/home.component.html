@@ -1,1 +1,13 @@
-<h2>Home works!</h2>
+<div class="main-page">
+  <mat-card class="main-content">
+    <mat-card-title>Bem-vindo ao BeeBank!</mat-card-title>
+    <mat-card-subtitle>Abra sua conta online de forma facilitada.</mat-card-subtitle>
+    <mat-card-actions class="action-content">
+      <form class="from-group" (ngSubmit)="procurarCPF(cpf)" >
+        <p class="p-action">Digite seu CPF:</p>
+        <input class="form-control" type="text" name="cpf" id="campo-cpf">
+      </form>
+      <button mat-button type="submit" class="button-search">Procurar</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

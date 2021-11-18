@@ -7,7 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  cpf = '';
+
   constructor() { }
+  
+  procurarCPF(cpf: string) {
+    console.log(cpf);
+  }
 
   ngOnInit(): void {
   }
