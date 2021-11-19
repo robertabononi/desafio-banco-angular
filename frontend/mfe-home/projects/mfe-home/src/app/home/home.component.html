@@ -3,11 +3,11 @@
     <mat-card-title>Bem-vindo ao BeeBank!</mat-card-title>
     <mat-card-subtitle>Abra sua conta online de forma facilitada.</mat-card-subtitle>
     <mat-card-actions class="action-content">
-      <form class="from-group" (ngSubmit)="procurarCPF(cpf)" >
+      <form [formGroup]="formHome" class="form-group" (ngSubmit)="procurarCpf()" >
         <p class="p-action">Digite seu CPF:</p>
-        <input class="form-control" type="text" name="cpf" id="campo-cpf">
+        <input class="form-control" type="text" name="cpf" formControlName="cpf" id="campo-cpf" maxlength="11">
+        <input mat-button type="submit" name="button" class="button-search" routerLink="/dados-cadastro" value="Procurar">
       </form>
-      <button mat-button type="submit" class="button-search" routerLink="/dados-cadastro">Procurar</button>
     </mat-card-actions>
   </mat-card>
 </div>
