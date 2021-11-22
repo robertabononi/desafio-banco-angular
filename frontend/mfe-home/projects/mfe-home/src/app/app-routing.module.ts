@@ -24,6 +24,14 @@ const routes: Routes = [
       import('./dados-cadastro/dados-cadastro.module').then(
         (m) => m.DadosCadastroModule
       )
+  },
+
+  {
+    path: 'upload-selfie',
+    loadChildren: () =>
+      import('./upload-selfie/upload-selfie.module').then(
+        (m) => m.UploadSelfieModule
+      )
   }
 
 ];

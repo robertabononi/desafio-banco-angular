@@ -8,13 +8,14 @@ import { AppComponent } from './app.component';
 import { HomeModule } from './home/home.module';
 import { AppRoutingModule } from './app-routing.module';
 import { DadosCadastroComponent } from './dados-cadastro/dados-cadastro.component';
-import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UploadSelfieComponent } from './upload-selfie/upload-selfie.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DadosCadastroComponent
+    DadosCadastroComponent,
+    UploadSelfieComponent
   ],
   imports: [
     AppRoutingModule,

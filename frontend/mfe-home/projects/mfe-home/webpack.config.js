@@ -31,7 +31,8 @@ module.exports = {
       filename: "remoteEntry.js",
       exposes: {
         './HomeModule': 'projects/mfe-home/src/app/home/home.module.ts',
-        './DadosCadastroModule': 'projects/mfe-home/src/app/dados-cadastro/dados-cadastro.module.ts'
+        './DadosCadastroModule': 'projects/mfe-home/src/app/dados-cadastro/dados-cadastro.module.ts',
+        './UploadSelfieModule': 'projects/mfe-home/src/app/upload-selfie/upload-selfie.module.ts',
       },
 
       // remotes: {
