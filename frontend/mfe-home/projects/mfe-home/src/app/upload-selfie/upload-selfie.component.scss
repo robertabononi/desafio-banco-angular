@@ -1,0 +1,25 @@
+.main-content, .main-page, .action-content, .p-action {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-content {
+  margin-top: 30px;
+  width: 500px;
+}
+
+.button-search {
+  display: block;
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.upload-field {
+  border: 1px solid grey;
+  padding: 5px;
+}

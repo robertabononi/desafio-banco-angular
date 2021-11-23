@@ -1,1 +1,16 @@
-<p>upload-selfie works!</p>
+<div class="main-page">
+  <mat-card class="main-content">
+    <mat-card-title>Upload selfie</mat-card-title>
+    <mat-card-subtitle>Tire uma selfie e faça upload abaixo</mat-card-subtitle>
+    <mat-card-actions class="action-content">
+      <form [formGroup]="formSelfie" class="form-group" (ngSubmit)="fazerUploadSelfie()" >
+        <div class="upload-field">
+          <input class="form-control" type="file" (change)="inputFileChange($event)" name="selfie" formControlName="selfie" id="campo-selfie">
+        </div>
+        <div class="button-search">
+          <input mat-button type="submit" name="button" value="Fazer upload">
+        </div>
+      </form>
+    </mat-card-actions>
+  </mat-card>
+</div>
