@@ -4,6 +4,7 @@
   align-items: center;
   box-shadow: 0 1px 4px rgb(18 22 25 / 16%);
   position: fixed;
+  z-index: 1;
 }
 
 img.bee-logo {
@@ -19,5 +20,4 @@ span {
   height: 100%;
   background-size: cover;
   background-attachment: fixed;
-  overflow-y: hidden;
 }
