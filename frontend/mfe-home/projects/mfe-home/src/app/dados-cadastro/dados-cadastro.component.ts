@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { HomeService } from '../services/home.service';
 import { DadosCadastrais } from './dados-cadastrais';
-import { DadosCadastroService } from './dados-cadastro.service';
 
 @Component({
   selector: 'app-dados-cadastro',
@@ -19,7 +19,7 @@ export class DadosCadastroComponent implements OnInit {
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
-    private service: DadosCadastroService
+    private service: HomeService
   ) {
     this.formCadastro = new FormGroup({
       nomeCompleto: new FormControl (null, [Validators.required, Validators.minLength(3)]),
@@ -60,6 +60,17 @@ export class DadosCadastroComponent implements OnInit {
 
   onSubmit() {
     console.log(this.formCadastro);
+    const cpfCliente = this.formCadastro.value.cpf;
+    this.service.listarCpf(cpfCliente).subscribe(data => {
+      console.log(data);
+      const dadosCadastrais: any = data;
+      console.log(dadosCadastrais.cliente);
+      if(dadosCadastrais.cliente) {
+        this.router.navigate(['/upload-selfie'], {queryParams: {cpf:cpfCliente, userData:true}});
+      } else {
+        this.router.navigate(['/upload-selfie'], {queryParams: {cpf:cpfCliente}});
+      }
+    });
   }
 
   /* consultaCEP(cep: string) {
@@ -68,7 +79,7 @@ export class DadosCadastroComponent implements OnInit {
   } */
 
   pegarDados(cpf: string) {
-    this.service.pegarDadosCliente(cpf).subscribe(dados => {
+    this.service.listarCpf(cpf).subscribe(dados => {
       //console.log(dados);
       const conteudoFormulario: any = dados;
       this.dadosUsuario = conteudoFormulario.cliente;
