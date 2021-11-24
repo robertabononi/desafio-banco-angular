@@ -10,12 +10,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { DadosCadastroComponent } from './dados-cadastro/dados-cadastro.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UploadSelfieComponent } from './upload-selfie/upload-selfie.component';
+import { SelectPlanComponent } from './select-plan/select-plan.component';
+import { SelectPlanModule } from './select-plan/select-plan.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     DadosCadastroComponent,
-    UploadSelfieComponent
+    UploadSelfieComponent,
+    SelectPlanComponent
   ],
   imports: [
     AppRoutingModule,
@@ -25,7 +28,8 @@ import { UploadSelfieComponent } from './upload-selfie/upload-selfie.component';
     MatToolbarModule,
     MatCardModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    SelectPlanModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -32,7 +32,15 @@ const routes: Routes = [
       import('./upload-selfie/upload-selfie.module').then(
         (m) => m.UploadSelfieModule
       )
-  }
+  },
+
+  {
+    path: 'select-plan',
+    loadChildren: () =>
+      import('./select-plan/select-plan.module').then(
+        (m) => m.SelectPlanModule
+      )
+  },
 
 ];
 

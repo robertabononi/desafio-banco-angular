@@ -61,22 +61,18 @@ export class DadosCadastroComponent implements OnInit {
   onSubmit() {
     console.log(this.formCadastro);
     const cpfCliente = this.formCadastro.value.cpf;
+    const salarioCliente = this.formCadastro.value.salarioMensal;
     this.service.listarCpf(cpfCliente).subscribe(data => {
       console.log(data);
       const dadosCadastrais: any = data;
       console.log(dadosCadastrais.cliente);
       if(dadosCadastrais.cliente) {
-        this.router.navigate(['/upload-selfie'], {queryParams: {cpf:cpfCliente, userData:true}});
+        this.router.navigate(['/upload-selfie'], {queryParams: {cpf:cpfCliente, salario:salarioCliente}});
       } else {
-        this.router.navigate(['/upload-selfie'], {queryParams: {cpf:cpfCliente}});
+        this.router.navigate(['/upload-selfie']);
       }
     });
   }
-
-  /* consultaCEP(cep: string) {
-    this.http.get(`//viacep.com.br/ws/${cep}/json/`)
-    .subscribe((dados: any) => console.log(dados))
-  } */
 
   pegarDados(cpf: string) {
     this.service.listarCpf(cpf).subscribe(dados => {

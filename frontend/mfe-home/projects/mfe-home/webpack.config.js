@@ -33,6 +33,7 @@ module.exports = {
         './HomeModule': 'projects/mfe-home/src/app/home/home.module.ts',
         './DadosCadastroModule': 'projects/mfe-home/src/app/dados-cadastro/dados-cadastro.module.ts',
         './UploadSelfieModule': 'projects/mfe-home/src/app/upload-selfie/upload-selfie.module.ts',
+        './SelectPlanModule': 'projects/mfe-home/src/app/select-plan/select-plan.module.ts'
       },
 
       // remotes: {
