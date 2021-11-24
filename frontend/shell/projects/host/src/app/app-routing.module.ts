@@ -35,6 +35,16 @@ const routes: Routes = [
 
       },
       {
+        path: 'upload-selfie',
+        loadChildren: () =>
+          loadRemoteModule({
+            remoteEntry: 'http://localhost:4200/remoteEntry.js',
+            remoteName: 'mfeHome',
+            exposedModule: './UploadSelfieModule'
+          }).then((m) => m.UploadSelfieModule)
+
+      },
+      {
         path: 'infos',
         loadChildren: () =>
           loadRemoteModule({

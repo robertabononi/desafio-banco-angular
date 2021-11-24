@@ -2,6 +2,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 0 1px 4px rgb(18 22 25 / 16%);
+  position: fixed;
 }
 
 img.bee-logo {
@@ -10,4 +12,12 @@ img.bee-logo {
 
 span {
   cursor: pointer;
+}
+
+.content {
+  background-image: url("https://images.pexels.com/photos/5882535/pexels-photo-5882535.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  height: 100%;
+  background-size: cover;
+  background-attachment: fixed;
+  overflow-y: hidden;
 }
