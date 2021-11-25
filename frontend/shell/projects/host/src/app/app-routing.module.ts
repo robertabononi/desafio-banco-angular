@@ -54,6 +54,15 @@ const routes: Routes = [
           }).then((m) => m.SelectPlanModule)
       },
       {
+        path: 'mostrar-dados-cliente',
+        loadChildren: () =>
+          loadRemoteModule({
+            remoteEntry: 'http://localhost:4200/remoteEntry.js',
+            remoteName: 'mfeHome',
+            exposedModule: './MostrarDadosClienteModule'
+          }).then((m) => m.MostrarDadosClienteModule)
+      },
+      {
         path: 'infos',
         loadChildren: () =>
           loadRemoteModule({
