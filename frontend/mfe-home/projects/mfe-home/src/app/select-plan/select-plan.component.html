@@ -1,8 +1,20 @@
 <div class="main-page">
-  <mat-card class="main-content">
-    <mat-card-title>Upload selfie</mat-card-title>
-    <mat-card-subtitle>Tire uma selfie e faça upload abaixo</mat-card-subtitle>
-    <mat-card-actions class="action-content">
-    </mat-card-actions>
-  </mat-card>
+  <div class="cards" *ngIf="listaPlanos">
+    <mat-card class="main-content" *ngFor="let plano of listaPlanos">
+      <mat-card-title>Plano:</mat-card-title>
+      <mat-card-subtitle>Selecione um plano</mat-card-subtitle>
+      <mat-card-actions class="action-content">
+        <p>Custo mensal: {{ plano.custoMensal }}</p>
+        <p>Tipo cartão: {{ plano. tipoCartao }}</p>
+        <p>Tipo de conta: {{ plano.tipoConta }}</p>
+      </mat-card-actions>
+    </mat-card>
+      <form [formGroup]="formPlanos" (ngSubmit)="onChoosePlan()">
+        <select formControlName="_id">
+          <option value="">Selecione um plano</option>
+          <option *ngFor="let plano of listaPlanos" [value]="plano._id">{{ plano.tipoConta }}</option>
+        </select>
+        <button [disabled]="!formPlanos.valid">Escolher plano</button>
+    </form>
+  </div>
 </div>

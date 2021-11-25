@@ -42,6 +42,14 @@ const routes: Routes = [
       )
   },
 
+  {
+    path: 'mostrar-dados-cliente',
+    loadChildren: () =>
+      import('./mostrar-dados-cliente/mostrar-dados-cliente.module').then(
+        (m) => m.MostrarDadosClienteModule
+      )
+  },
+
 ];
 
 @NgModule({
