@@ -45,6 +45,15 @@ const routes: Routes = [
 
       },
       {
+        path: 'select-plan',
+        loadChildren: () =>
+          loadRemoteModule({
+            remoteEntry: 'http://localhost:4200/remoteEntry.js',
+            remoteName: 'mfeHome',
+            exposedModule: './SelectPlanModule'
+          }).then((m) => m.SelectPlanModule)
+      },
+      {
         path: 'infos',
         loadChildren: () =>
           loadRemoteModule({

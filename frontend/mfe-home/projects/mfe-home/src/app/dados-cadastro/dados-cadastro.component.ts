@@ -60,14 +60,11 @@ export class DadosCadastroComponent implements OnInit {
 
   onSubmit() {
     console.log(this.formCadastro);
-    const cpfCliente = this.formCadastro.value.cpf;
-    const salarioCliente = this.formCadastro.value.salarioMensal;
-    this.service.listarCpf(cpfCliente).subscribe(data => {
-      console.log(data);
+    const dadosCliente = this.formCadastro.value;
+    this.service.enviarDados(dadosCliente).subscribe(data => {
       const dadosCadastrais: any = data;
-      console.log(dadosCadastrais.cliente);
-      if(dadosCadastrais.cliente) {
-        this.router.navigate(['/upload-selfie'], {queryParams: {cpf:cpfCliente, salario:salarioCliente}});
+      if(dadosCadastrais) {
+        this.router.navigate(['/upload-selfie'], {queryParams: {cpf:dadosCadastrais.cpf, salarioMensal:dadosCadastrais.salarioMensal}});
       } else {
         this.router.navigate(['/upload-selfie']);
       }
