@@ -1,5 +1,7 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params, Router } from '@angular/router';
+import { HomeService } from './../../../../../../mfe-home/projects/mfe-home/src/app/services/home.service';
+import { InfosAConfirmar } from './infos-aconfirmar';
 
 @Component({
   selector: 'app-infos',
@@ -7,44 +9,32 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./infos.component.scss']
 })
 export class InfosComponent implements OnInit {
+  cpf = '';
+  dados!: InfosAConfirmar;
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private service: HomeService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
-    this.reaproveitamentoDeDados();
+    console.log(this.activatedRoute);
+    this.activatedRoute.queryParams.subscribe((queryParams: Params) => {
+      this.cpf = queryParams['cpf'];
+    });
+    this.pegarDados();
   }
 
-
-
-  reaproveitamentoDeDados() {
-
-    let body = {
-      "cpf": "11111111111"
-    }
-
-    let host = 'http://bancoapi-env.eba-ra7jpuyh.us-east-2.elasticbeanstalk.com/api/ReaproveitaDados/buscarCPF';
-
-    this.http.post<any>(host, body).subscribe(info => {
-
-      console.log(info);
-      return info;
-    },
-      (err) => {
-        console.log("Erro ao chamar a API");
-
-      }
-
-
-    );
-
+  pegarDados() {
+    this.service.buscarDados(this.cpf).subscribe(dados => {
+      const dadosCliente: any = dados;
+      this.dados = dadosCliente.cliente;
+      console.log(this.dados);
+    })
   }
 
-
-
-  chamaApi() {
-
-
+  nextPage() {
+    this.router.navigate(['/'])
   }
-
-
 }

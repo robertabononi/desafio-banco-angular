@@ -1,9 +1,9 @@
 <div class="main-page">
   <mat-card class="main-content">
-    <mat-card-title>Dados cadastrais</mat-card-title>
-    <mat-card-subtitle>Preencha seus dados</mat-card-subtitle>
+    <mat-card-title>Confira suas informações abaixo</mat-card-title>
+    <mat-card-subtitle>Clique em "concluir cadastro" para finalizar</mat-card-subtitle>
     <mat-card-actions class="action-content">
-      <form role="form">
+      <form role="form" (ngSubmit)="pegarDados()" >
         <div class="form-line">
           <div class="form-group">
             <label for="nomeCompleto">Nome completo
@@ -11,7 +11,9 @@
               formControlName="nomeCompleto"
               id="nomeCompleto"
               class="form-control"
-              placeholder="Nome completo"/>
+              placeholder="Nome completo"
+              [value]="dados.nomeCompleto"
+              disabled/>
             </label>
           </div>
 
@@ -21,7 +23,9 @@
               formControlName="email"
               id="email"
               class="form-control"
-              placeholder="exemple@email.com"/>
+              placeholder="exemple@email.com"
+              [value]="dados.email"
+              disabled/>
             </label>
           </div>
 
@@ -31,7 +35,9 @@
               formControlName="cpf"
               id="cpf"
               class="form-control"
-              placeholder="CPF"/>
+              placeholder="CPF"
+              [value]="dados.cpf"
+              disabled/>
             </label>
           </div>
 
@@ -41,7 +47,9 @@
               formControlName="dataNascimento"
               id="dataNascimento"
               class="form-control"
-              placeholder="Data de nascimento"/>
+              placeholder="Data de nascimento"
+              [value]="dados.dataNascimento"
+              disabled/>
             </label>
           </div>
         </div>
@@ -53,7 +61,9 @@
               formControlName="dataCadastro"
               id="dataCadastro"
               class="form-control"
-              placeholder="Data de cadastro"/>
+              placeholder="Data de cadastro"
+              [value]="dados.dataCadastro"
+              disabled/>
             </label>
           </div>
 
@@ -63,7 +73,9 @@
               formControlName="salarioMensal"
               id="salarioMensal"
               class="form-control"
-              placeholder="Salário mensal"/>
+              placeholder="Salário mensal"
+              [value]="dados.salarioMensal"
+              disabled/>
             </label>
           </div>
 
@@ -73,7 +85,9 @@
               formControlName="senha"
               id="senha"
               class="form-control"
-              placeholder="Senha"/>
+              placeholder="Senha"
+              [value]="dados.senha"
+              disabled/>
             </label>
           </div>
 
@@ -83,7 +97,9 @@
               formControlName="numeroCelular"
               id="numeroCelular"
               class="form-control"
-              placeholder="Celular"/>
+              placeholder="Celular"
+              [value]="dados.numeroCelular"
+              disabled/>
             </label>
           </div>
         </div>
@@ -96,7 +112,9 @@
                 formControlName="cep"
                 id="cep"
                 class="form-control"
-                placeholder="CEP"/>
+                placeholder="CEP"
+                [value]="dados.endereco.cep"
+                disabled/>
               </label>
             </div>
 
@@ -106,7 +124,9 @@
                 formControlName="rua"
                 id="rua"
                 class="form-control"
-                placeholder="Rua"/>
+                placeholder="Rua"
+                [value]="dados.endereco.rua"
+                disabled/>
               </label>
             </div>
 
@@ -116,7 +136,9 @@
                 formControlName="numero"
                 id="numero"
                 class="form-control"
-                placeholder="Número"/>
+                placeholder="Número"
+                [value]="dados.endereco.numero"
+                disabled/>
               </label>
             </div>
 
@@ -126,7 +148,9 @@
                 formControlName="bairro"
                 id="bairro"
                 class="form-control"
-                placeholder="Bairro"/>
+                placeholder="Bairro"
+                [value]="dados.endereco.bairro"
+                disabled/>
               </label>
             </div>
           </div>
@@ -138,7 +162,9 @@
                 formControlName="cidade"
                 id="cidade"
                 class="form-control"
-                placeholder="Cidade"/>
+                placeholder="Cidade"
+                [value]="dados.endereco.cidade"
+                disabled/>
               </label>
             </div>
             <div class="form-group">
@@ -147,13 +173,52 @@
                 formControlName="estado"
                 id="estado"
                 class="form-control"
-                placeholder="Estado"/>
+                placeholder="Estado"
+                [value]="dados.endereco.estado"
+                disabled/>
+              </label>
+            </div>
+          </div>
+
+          <p>Plano:</p>
+          <div class="form-line">
+            <div class="form-group">
+              <label for="tipo-conta">Tipo conta
+                <input type="text"
+                formControlName="tipo-conta"
+                id="tipo-conta"
+                class="form-control"
+                placeholder="Tipo conta"
+                [value]="dados.plano.tipoConta"
+                disabled/>
+              </label>
+            </div>
+            <div class="form-group">
+              <label for="tipo-cartao">Tipo cartão
+                <input type="text"
+                formControlName="tipo-cartao"
+                id="tipo-cartao"
+                class="form-control"
+                placeholder="Tipo cartão"
+                [value]="dados.plano.tipoCartao"
+                disabled/>
+              </label>
+            </div>
+            <div class="form-group">
+              <label for="custo-mensal">Custo mensal
+                <input type="text"
+                formControlName="custo-mensal"
+                id="custo-mensal"
+                class="form-control"
+                placeholder="Custo mensal"
+                [value]="dados.plano.custoMensal"
+                disabled/>
               </label>
             </div>
           </div>
         </div>
         <div class="button-search">
-          <button class="submit-button" type="submit" id="button">Cadastrar</button>
+          <button class="submit-button" type="submit" id="button">Concluir cadastro</button>
         </div>
       </form>
     </mat-card-actions>

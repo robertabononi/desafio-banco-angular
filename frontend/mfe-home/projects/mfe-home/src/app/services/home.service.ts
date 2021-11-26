@@ -11,6 +11,7 @@ export class HomeService {
   private API2 ='http://bancoapi-env.eba-ra7jpuyh.us-east-2.elasticbeanstalk.com/api/Clientes';
   private API3 = 'http://bancoapi-env.eba-ra7jpuyh.us-east-2.elasticbeanstalk.com/api/Planos/planosDisponiveis';
   private APIAlterarPlano = 'http://bancoapi-env.eba-ra7jpuyh.us-east-2.elasticbeanstalk.com/api/Clientes/alterarPlano';
+  private API5 = 'http://bancoapi-env.eba-ra7jpuyh.us-east-2.elasticbeanstalk.com/api/Clientes/buscarDados'
 
 
   constructor(private http: HttpClient) { }
@@ -29,6 +30,10 @@ export class HomeService {
 
   alterarPlano(plano: AlterarPlano) {
     return this.http.post(this.APIAlterarPlano, plano);
+  }
+
+  buscarDados(cpf: string) {
+    return this.http.post(this.API5, {cpf});
   }
 
 }

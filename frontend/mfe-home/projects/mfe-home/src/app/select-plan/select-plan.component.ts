@@ -56,7 +56,7 @@ export class SelectPlanComponent implements OnInit {
       }
     }
     this.service.alterarPlano(alterarPlano).subscribe();
-    this.router.navigate(['/mostrar-dados-cliente'], {queryParams: {cpf:this.cpf}})
+    this.router.navigate(['/infos'], {queryParams: {cpf:this.cpf}})
   }
 
   filtrarPlanos(id: string) {

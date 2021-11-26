@@ -44,7 +44,7 @@ export class UploadSelfieComponent implements OnInit {
   }
 
   fazerUploadSelfie() {
-    this.router.navigate(['/infos'], {queryParams: {cpf:this.cpf, salarioMensal:this.salarioMensal}});
+    this.router.navigate(['/select-plan'], {queryParams: {cpf:this.cpf, salarioMensal:this.salarioMensal}});
   }
 
 }
