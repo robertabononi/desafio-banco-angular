@@ -1,20 +1,19 @@
+import { CommonModule } from '@angular/common';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { InfosRoutingModule } from './infos-routing.module';
 import { InfosComponent } from './infos.component';
-
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
     declarations: [
-       InfosComponent
-
+      InfosComponent
     ],
     imports: [
-        BrowserModule,
-        InfosRoutingModule,
-        HttpClientModule,
-
+      CommonModule,
+      InfosRoutingModule,
+      HttpClientModule,
+      MatCardModule
     ],
     providers: []
 })

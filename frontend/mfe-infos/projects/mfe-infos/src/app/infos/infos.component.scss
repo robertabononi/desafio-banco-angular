@@ -1,0 +1,47 @@
+.main-content, .main-page, .p-action {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-line {
+  display: flex;
+}
+
+.main-content {
+  margin: 104px 0px 30px 0px;
+  padding: 25px 50px;
+  background-color: #F5F5F5;
+}
+
+.button-search {
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.submit-button {
+  background-color: #e59b51;
+  border: none;
+  border-radius: 4px;
+  padding: 10px;
+  color: #ffffffde;
+}
+
+.submit-button:hover {
+  transform: scale(1.1);
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-control {
+  border-radius: 4px;
+  border: 1px solid rgba(128, 128, 128, 0.781);
+  height: 25px;
+  margin: 0px 20px 20px 0px;
+}

@@ -6,8 +6,8 @@ import { InfosComponent } from './infos.component';
 const routes: Routes = [
 
     {
-        path: '',
-        component: InfosComponent
+      path: '',
+      component: InfosComponent
     }
 
 ];

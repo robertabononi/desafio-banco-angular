@@ -5,9 +5,9 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
 
     {
-        path: '',
-        redirectTo: 'infos',
-        pathMatch: 'full'
+      path: '', 
+      redirectTo: 'infos',
+      pathMatch: 'full'
     },
 
     {
