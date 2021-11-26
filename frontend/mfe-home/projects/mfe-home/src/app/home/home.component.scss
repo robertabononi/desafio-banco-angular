@@ -19,7 +19,7 @@
 }
 
 #campo-cpf {
-  background-color: #ffffff00;
+  background-color: #ffffff;
   height: 25px;
   border-radius: 5px;
   border: 1px solid #808080;
@@ -33,11 +33,15 @@
   color: #ffffffde;
 }
 
-.submit-button:hover {
+/* .submit-button:hover {
   transform: scale(1.1);
+} */
+
+.submit-button:disabled {
+  background-color: #808080cc;
 }
 
 .p-action {
-  color: #0000008A;
+  color: #000000d8;
   margin-bottom: 0;
 }

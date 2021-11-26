@@ -25,11 +25,11 @@ export class HomeComponent implements OnInit {
 
   procurarCpf() {
     const cpfCliente = this.formHome.value.cpf;
-    console.log(this.formHome.value);
+    //console.log(this.formHome.value);
     this.service.listarCpf(cpfCliente).subscribe(data => {
-      console.log(data);
+      //console.log(data);
       const dadosCadastrais: any = data;
-      console.log(dadosCadastrais.cliente);
+      //console.log(dadosCadastrais.cliente);
       if(dadosCadastrais.cliente) {
         this.router.navigate(['/dados-cadastro'], {queryParams: {cpf:cpfCliente, userData:true}});
       } else {

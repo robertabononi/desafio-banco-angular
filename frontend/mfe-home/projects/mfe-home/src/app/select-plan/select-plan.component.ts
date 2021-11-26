@@ -55,8 +55,7 @@ export class SelectPlanComponent implements OnInit {
         tipoConta: planoSelecionado[0].tipoConta,
       }
     }
-    this.service.alterarPlano(alterarPlano).subscribe(dados => {
-    })
+    this.service.alterarPlano(alterarPlano).subscribe();
     this.router.navigate(['/mostrar-dados-cliente'], {queryParams: {cpf:this.cpf}})
   }
 

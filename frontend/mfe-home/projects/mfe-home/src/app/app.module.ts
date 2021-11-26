@@ -12,7 +12,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UploadSelfieComponent } from './upload-selfie/upload-selfie.component';
 import { SelectPlanComponent } from './select-plan/select-plan.component';
 import { SelectPlanModule } from './select-plan/select-plan.module';
-import { MostrarDadosClienteModule } from './mostrar-dados-cliente/mostrar-dados-cliente.module';
 
 @NgModule({
   declarations: [
@@ -30,8 +29,7 @@ import { MostrarDadosClienteModule } from './mostrar-dados-cliente/mostrar-dados
     MatCardModule,
     ReactiveFormsModule,
     FormsModule,
-    SelectPlanModule,
-    MostrarDadosClienteModule
+    SelectPlanModule
   ],
   providers: [],
   bootstrap: [AppComponent]

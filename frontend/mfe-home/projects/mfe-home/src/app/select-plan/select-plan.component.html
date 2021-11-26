@@ -1,20 +1,25 @@
 <div class="main-page">
-  <div class="cards" *ngIf="listaPlanos">
-    <mat-card class="main-content" *ngFor="let plano of listaPlanos">
-      <mat-card-title>Plano:</mat-card-title>
-      <mat-card-subtitle>Selecione um plano</mat-card-subtitle>
-      <mat-card-actions class="action-content">
-        <p>Custo mensal: {{ plano.custoMensal }}</p>
-        <p>Tipo cartão: {{ plano. tipoCartao }}</p>
-        <p>Tipo de conta: {{ plano.tipoConta }}</p>
-      </mat-card-actions>
-    </mat-card>
-      <form [formGroup]="formPlanos" (ngSubmit)="onChoosePlan()">
-        <select formControlName="_id">
-          <option value="">Selecione um plano</option>
-          <option *ngFor="let plano of listaPlanos" [value]="plano._id">{{ plano.tipoConta }}</option>
-        </select>
-        <button [disabled]="!formPlanos.valid">Escolher plano</button>
-    </form>
-  </div>
+  <mat-card class="main-card">
+    <mat-card-title>Plano:</mat-card-title>
+    <mat-card-subtitle>Escolha um dos planos a seguir</mat-card-subtitle>
+    <div class="content" *ngIf="listaPlanos">
+      <div class="cards">
+        <mat-card class="main-content" *ngFor="let plano of listaPlanos">
+          <mat-card-title>{{ plano.tipoConta }}</mat-card-title>
+          <mat-card-subtitle>Tipo cartão: {{ plano. tipoCartao }}</mat-card-subtitle>
+          <mat-card-actions class="action-content">
+            <h3>Custo mensal:</h3>
+            <h2>{{ plano.custoMensal }}</h2>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+        <form [formGroup]="formPlanos" (ngSubmit)="onChoosePlan()" class="form-part">
+          <select formControlName="_id" class="combobox">
+            <option value="">Selecione um plano</option>
+            <option *ngFor="let plano of listaPlanos" [value]="plano._id">{{ plano.tipoConta }}</option>
+          </select>
+          <button [disabled]="!formPlanos.valid" class="submit-button">Escolher plano</button>
+      </form>
+    </div>
+  </mat-card>
 </div>

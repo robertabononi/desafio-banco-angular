@@ -1,14 +1,32 @@
-.main-content, .main-page, .action-content, .p-action {
+.main-content, .main-page, .action-content, .p-action, .main-card, .content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.main-content {
-  margin-top: 104px;
-  width: 500px;
+.cards {
+  display: grid;
+  grid-template-columns: 260px 260px 260px;
+  grid-gap: 25px;
 }
+
+.main-card {
+  margin: 104px 0 60px 0;
+  padding: 50px;
+  background-color: #F5F5F5;
+}
+
+/* .main-content:hover {
+  background-color: hotpink;
+  transform: scale(1.1);
+  transition: 0.5s;
+}
+
+.main-content:active {
+  background-color: hotpink;
+  transform: scale(1.1);
+} */
 
 .button-search {
   display: block;
@@ -22,4 +40,27 @@
 .upload-field {
   border: 1px solid grey;
   padding: 5px;
-} 
+}
+
+.combobox {
+  height: 40px;
+  margin: 10px 0;
+  border-radius: 5px;
+}
+
+.form-part {
+  display: flex;
+  flex-direction: column;
+}
+
+.submit-button {
+  background-color: #e59b51;
+  border: none;
+  border-radius: 4px;
+  padding: 10px;
+  color: #ffffffde;
+}
+
+.submit-button:disabled {
+  background-color: #808080cc;
+}
