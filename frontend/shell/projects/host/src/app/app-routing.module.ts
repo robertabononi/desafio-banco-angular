@@ -62,6 +62,15 @@ const routes: Routes = [
             exposedModule: './InfosModule'
           }).then((m) => m.InfosModule)
 
+      },
+      {
+        path: 'final-page',
+        loadChildren: () =>
+          loadRemoteModule({
+            remoteEntry: 'http://localhost:3000/remoteEntry.js',
+            remoteName: 'mfeInfos',
+            exposedModule: './FinalPageModule'
+          }).then((m) => m.FinalPageModule)
       }
 
       // {
