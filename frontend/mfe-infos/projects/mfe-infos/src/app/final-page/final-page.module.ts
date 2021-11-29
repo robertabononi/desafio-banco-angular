@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { FinalPageRoutingModule } from './final-page-routing.module';
 import { FinalPageComponent } from './final-page.component';
+import { MatCardModule } from '@angular/material/card';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { FinalPageComponent } from './final-page.component';
   ],
   imports: [
     CommonModule,
-    FinalPageRoutingModule
+    FinalPageRoutingModule,
+    MatCardModule
   ]
 })
 export class FinalPageModule { }
