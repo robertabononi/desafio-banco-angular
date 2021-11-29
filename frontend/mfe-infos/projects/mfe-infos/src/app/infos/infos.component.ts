@@ -30,7 +30,6 @@ export class InfosComponent implements OnInit {
     this.service.buscarDados(this.cpf).subscribe(dados => {
       const dadosCliente: any = dados;
       this.dados = dadosCliente.cliente;
-      console.log(this.dados);
     })
   }
 
