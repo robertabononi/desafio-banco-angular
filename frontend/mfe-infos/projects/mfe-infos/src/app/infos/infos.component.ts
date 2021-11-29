@@ -35,6 +35,6 @@ export class InfosComponent implements OnInit {
   }
 
   nextPage() {
-    this.router.navigate(['/'])
+    this.router.navigate(['/final-page']);
   }
 }

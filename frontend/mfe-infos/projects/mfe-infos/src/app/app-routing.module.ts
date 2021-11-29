@@ -5,7 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
 
     {
-      path: '', 
+      path: '',
       redirectTo: 'infos',
       pathMatch: 'full'
     },
@@ -16,6 +16,15 @@ const routes: Routes = [
             import('./infos/infos.module').then(
                 (m) => m.InfosModule
             )
+
+    },
+
+    {
+      path: 'final-page',
+      loadChildren: () =>
+      import('./final-page/final-page.module').then(
+        (m) => m.FinalPageModule
+      )
 
     }
 

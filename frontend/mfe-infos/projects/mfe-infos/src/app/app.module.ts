@@ -7,6 +7,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FinalPageModule } from './final-page/final-page.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     MatToolbarModule,
     MatCardModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FinalPageModule
   ],
   providers: [],
   bootstrap: [AppComponent]
